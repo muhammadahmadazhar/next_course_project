@@ -6,7 +6,7 @@ export default function FormPage() {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Save data to local storage
     const formData = { name, description }
