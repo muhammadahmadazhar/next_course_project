@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import { Prisma, Task } from '@prisma/client';
+import { LogOut } from 'lucide-react';
+import { signOut } from 'next-auth/react';
 
 const titleSchema = z.object({
   title: z.string().min(1, 'Title is required').max(100, 'Title is too long'),
@@ -79,6 +81,13 @@ export default function TitleForm() {
   return (
     <div className="p-8 max-w-md mx-auto">
       <h1 className="text-2xl font-bold mb-4">Create a Task</h1>
+      <button
+                    className="flex items-center gap-2 w-full px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md"
+                    onClick={() => signOut({ callbackUrl: '/signin' })}
+                  >
+                    <LogOut className="h-4 w-4" />
+                    Sign out
+                  </button>
       <Formik
         initialValues={initialValues}
         validate={(values) => {
