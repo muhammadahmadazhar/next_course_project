@@ -28,32 +28,32 @@ interface Credentials {
 }
 
 // Define callback parameters
-interface SignInCallbackParams {
-  user: {
-    id?: string;
-    name?: string | null;
-    email?: string | null;
-    image?: string | null;
-  };
-  account: {
-    provider: string;
-    type: string;
-    providerAccountId: string;
-    access_token?: string;
-    expires_at?: number;
-    scope?: string;
-    token_type?: string;
-    id_token?: string;
-  } | null;
-  profile?: {
-    email?: string;
-    name?: string;
-  };
-  email?: {
-    verificationRequest?: boolean;
-  };
-  credentials?: Record<string, unknown>;
-}
+// interface SignInCallbackParams {
+//   user: {
+//     id?: string;
+//     name?: string | null;
+//     email?: string | null;
+//     image?: string | null;
+//   };
+//   account: {
+//     provider: string;
+//     type: string;
+//     providerAccountId: string;
+//     access_token?: string;
+//     expires_at?: number;
+//     scope?: string;
+//     token_type?: string;
+//     id_token?: string;
+//   } | null;
+//   profile?: {
+//     email?: string;
+//     name?: string;
+//   };
+//   email?: {
+//     verificationRequest?: boolean;
+//   };
+//   credentials?: Record<string, unknown>;
+// }
 
 const prisma = new PrismaClient();
 
